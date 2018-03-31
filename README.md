@@ -2,7 +2,7 @@
 
 This is a recursive descent compiler for the following grammar:
 
-'''
+```
 <program>     ->  begin <stmt_list> end
 <stmt>        ->  <id> := <expr> | ε
 <stmt_list>   ->  <stmt_list> ; <stmt> | <stmt>
@@ -10,21 +10,21 @@ This is a recursive descent compiler for the following grammar:
 <term>        ->  <term> * <factor> | <term> div <factor> | <term> mod <factor> |  <factor>
 <factor>      ->  <primary> ^ <factor> | <primary>
 <primary>     ->  <id> | <num> | ( <expr> )
-'''
+```
 
 An example input program would be:
 
-'''
+```
 begin
     alpha := 20; gamma := 11; C3P0 := 5; R2D2 := 4; 		 	
     answer := alpha + 2 * gamma div (C3P0 - R2D2);
     gun := (i mod ammo)^2^2^2
 end 
-'''
+```
 
 And the output for this example would be:
 
-'''
+```
 LVALUE alpha
 PUSH 20
 STO
@@ -61,4 +61,4 @@ POW
 STO
 HALT
 Compilation completed
-'''
+```
